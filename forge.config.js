@@ -6,15 +6,15 @@ module.exports = {
     asar: true,
   },
   rebuildConfig: {},
-  makers: [
-    {
-      name: '@electron-forge/maker-squirrel',
-      config: {},
-    },
-    {
-      name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
-    },
+  makers: [ // uncomment what ever other platform you want besides debian
+    // {
+      // name: '@electron-forge/maker-squirrel',
+      // config: {},
+    // },
+    // {
+      // name: '@electron-forge/maker-zip',
+      // platforms: ['darwin'],
+    // },
     {
       name: '@electron-forge/maker-deb',
       config: { icon: './standalone/apple-touch-icon.png' },
