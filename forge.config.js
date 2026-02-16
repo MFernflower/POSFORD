@@ -17,7 +17,7 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      config: { icon: './standalone/apple-touch-icon.png', version: "1.1.0'},
+      config: { icon: './standalone/apple-touch-icon.png' },
     },
    // {
      // name: '@electron-forge/maker-rpm',
