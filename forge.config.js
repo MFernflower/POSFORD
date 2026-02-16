@@ -19,10 +19,10 @@ module.exports = {
       name: '@electron-forge/maker-deb',
       config: { icon: './standalone/apple-touch-icon.png' },
     },
-    {
-      name: '@electron-forge/maker-rpm',
-      config: { icon: './standalone/apple-touch-icon.png' },
-    },
+   // {
+     // name: '@electron-forge/maker-rpm',
+      // config: { icon: './standalone/apple-touch-icon.png' },
+    // },
   ],
   plugins: [
     {
