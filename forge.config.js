@@ -14,13 +14,19 @@ module.exports = {
           id: 'com.mfernflower.posford',
           categories: ['Science'],
           icon: './standalone/apple-touch-icon.png',
-          // Sandbox permissions
+          // Updated to the latest 2026 Freedesktop Runtime
+          runtime: 'org.freedesktop.Platform',
+          runtimeVersion: '25.08', 
+          sdk: 'org.freedesktop.Sdk',
+          
           finishArgs: [
-            '--share=ipc',       // Shared memory for performance
-            '--socket=x11',      // Display server access (X11)
-            '--socket=wayland',  // Display server access (Wayland)
-            '--share=network',   // General network access (optional, remove if not needed)
-            '--filesystem=xdg-desktop', // Permission to read/write to the Desktop
+            '--share=ipc',              // Shared memory for Chromium performance
+            '--socket=x11',             // X11 display access
+            '--socket=wayland',         // Wayland display access
+            '--device=dri',             // Hardware acceleration (OpenGL/Vulkan)
+            '--socket=pulseaudio',      // Audio support
+            '--share=network',          // Network access
+            '--filesystem=xdg-desktop', // Direct Desktop folder access
           ],
         },
       },
