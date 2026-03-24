@@ -6,31 +6,31 @@ module.exports = {
     asar: true,
   },
   rebuildConfig: {},
-  makers: [ // uncomment what ever other platform you want besides debian
-    // {
-      // name: '@electron-forge/maker-squirrel',
-      // config: {},
-    // },
-    // {
-      // name: '@electron-forge/maker-zip',
-      // platforms: ['darwin'],
-    // },
+  makers: [
     {
-      name: '@electron-forge/maker-deb',
-      config: { icon: './standalone/apple-touch-icon.png' },
+      name: '@electron-forge/maker-flatpak',
+      config: {
+        options: {
+          id: 'com.mfernflower.posford',
+          categories: ['Science'],
+          icon: './standalone/apple-touch-icon.png',
+          // Sandbox permissions
+          finishArgs: [
+            '--share=ipc',       // Shared memory for performance
+            '--socket=x11',      // Display server access (X11)
+            '--socket=wayland',  // Display server access (Wayland)
+            '--share=network',   // General network access (optional, remove if not needed)
+            '--filesystem=xdg-desktop', // Permission to read/write to the Desktop
+          ],
+        },
+      },
     },
-   // {
-     // name: '@electron-forge/maker-rpm',
-      // config: { icon: './standalone/apple-touch-icon.png' },
-    // },
   ],
   plugins: [
     {
       name: '@electron-forge/plugin-auto-unpack-natives',
       config: {},
     },
-    // Fuses are used to enable/disable various Electron functionality
-    // at package time, before code signing the application
     new FusesPlugin({
       version: FuseVersion.V1,
       [FuseV1Options.RunAsNode]: false,
