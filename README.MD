@@ -1,4 +1,4 @@
-POSFORD is a simple electron package that allows EPAM's Ketcher https://lifescience.opensource.epam.com/ketcher/ to be installed as a cross platform application
+POSFORD is a simple electron package that allows EPAM's Ketcher https://lifescience.opensource.epam.com/ketcher/ to be installed as a linux application
 
 Every file outside of the standalone folder is public domain
 
