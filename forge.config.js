@@ -37,14 +37,17 @@ module.exports = {
       name: '@electron-forge/plugin-auto-unpack-natives',
       config: {},
     },
-    new FusesPlugin({
-      version: FuseVersion.V1,
-      [FuseV1Options.RunAsNode]: false,
-      [FuseV1Options.EnableCookieEncryption]: false,
-      [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
-      [FuseV1Options.EnableNodeCliInspectArguments]: false,
-      [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
-      [FuseV1Options.OnlyLoadAppFromAsar]: true,
-    }),
+    {
+      name: '@electron-forge/plugin-fuses',
+      config: {
+        version: "2.3.0",
+        [FuseV1Options.RunAsNode]: false,
+        [FuseV1Options.EnableCookieEncryption]: false,
+        [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
+        [FuseV1Options.EnableNodeCliInspectArguments]: false,
+        [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
+        [FuseV1Options.OnlyLoadAppFromAsar]: true,
+      },
+    },
   ],
 };
