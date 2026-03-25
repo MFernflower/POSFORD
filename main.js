@@ -3,8 +3,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('node:path')
 
-if (require('electron-squirrel-startup')) app.quit(); // Get Squirrelly
-
 function createWindow () {
 // Create a basic ass BrowserWindow and load the webapp 
 const mainWindow = new BrowserWindow({ width: 800, height: 800, icon: './standalone/apple-touch-icon.png'})
