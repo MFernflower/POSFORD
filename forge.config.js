@@ -31,6 +31,15 @@ module.exports = {
         },
       },
     },
+    {
+      name: '@electron-forge/maker-deb',
+      config: {
+        options: {
+          maintainer: 'MFernflower',
+          homepage: 'https://github.com/MFernflower/POSFORD',
+        },
+      },
+    },
   ],
   plugins: [
     {
